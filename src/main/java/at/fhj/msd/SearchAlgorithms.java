@@ -41,11 +41,20 @@ public class SearchAlgorithms {
             return 0;
       }
 
+      /**
+       * The Quadratic Binary Search Algorithm implemented in Java
+       * The t value is the same Value as the t in the Interpolation Search
+       * But then it Searches from t the correct field using Square(n) steps, n being the size of the list/array - 1
+       * so the last index basically
+       * @param a the array to search
+       * @param x the target to find
+       * @return the index of where x is in the a array
+       */
       public static int quadraticBinarySearch(int a[], int x)
       {
-                  t = Calculate_t(a, 0, a.length - 1, x);
+                  t = Calculate_t(a, 0, a.length - 1, x); //Calculating the First t Value
             
-            if (a[t] < x)
+            if (a[t] < x) 
             {
                try
                {
@@ -54,7 +63,7 @@ public class SearchAlgorithms {
                         t += (int) Math.sqrt(a.length);
                   }
                }
-               catch (IndexOutOfBoundsException e)
+               catch (IndexOutOfBoundsException e) // if the t value is bigger then the last index of a, then t is asigned the last index of a
                {
                   t = a.length - 1;
                }
@@ -64,22 +73,22 @@ public class SearchAlgorithms {
                   to = (int) t;
 
               
-                    while (from <= to)
+                    while (from <= to) //Checking in the new Block where the x Value is
                     {
                         if (a[from] == x)
                         {
-                              return from;
+                              return from; // returning the index of the x Value
                         }
 
                         from++;
                     }
-                    return -1;
+                    return -1; //if the x Value is not found, then it doesn't exist.
                
                   
                   
 
             }
-            else if (a[t] > x)
+            else if (a[t] > x) //this is the exact same Process as before, but here the value at the t index is smaller than x
             {
                   try {
                       while (!(a[t] <= x))
@@ -118,6 +127,9 @@ public class SearchAlgorithms {
             return t;
       }
 
+      /**
+       * A Calculator Method to Calculate the 't' value used in the Quadratic Binary Search and Interpolation Search Algorithms
+       */
       private static int Calculate_t(int a[], int from, int to, int x)
       {
             double divison_calc = (double)(x-a[from]) / (double)(a[to]-a[from]);
