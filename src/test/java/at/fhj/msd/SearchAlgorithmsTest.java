@@ -19,6 +19,7 @@ public class SearchAlgorithmsTest {
       {
             assertEquals(4, SearchAlgorithms.linearSearch(sorted_Array, 4)); 
             assertEquals(3, SearchAlgorithms.linearSearch(unsorted_Array, 343)); 
+            assertEquals(-1, SearchAlgorithms.linearSearch(sorted_Array, 200));
       }
 
 
