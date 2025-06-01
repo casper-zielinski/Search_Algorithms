@@ -18,7 +18,22 @@ The most basic form of a search Algorithm. I used a while loop for this, but eve
 
 ## Binary Search
 
+Binary Search is an efficient algorithm for searching in **sorted arrays**.  
+It works by repeatedly dividing the search interval in half and checking whether the target value lies to the left or right. This halving of the search space each step leads to a logarithmic runtime.
+
+- Best Case Scenario: *O(1)*  
+- Average Case Scenario: *O(log n)* 
+- Worst Case Scenario: *O(log n)* 
+
 ## Interpolation Search
+
+Interpolation Search is an improved variant of binary search that works especially well on **uniformly distributed, sorted arrays**.  
+Instead of always searching the middle, it estimates the likely position of the target value based on its value relative to the current bounds. This can lead to faster searches when the data distribution is favorable.
+
+- Best Case Scenario: *O(1)*  
+- Average Case Scenario: *O(log log n)*  
+- Worst Case Scenario: *O(n)*  
+  
 
 ## Quadratic Binary Search
 
