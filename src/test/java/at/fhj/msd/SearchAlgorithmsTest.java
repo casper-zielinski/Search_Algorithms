@@ -1,7 +1,6 @@
 package at.fhj.msd;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -13,9 +12,9 @@ public class SearchAlgorithmsTest {
       @Test
       @DisplayName("Linear Search Algorithm")
       void LinearSearchAlgorithm() {
-            assertEquals(4, SearchAlgorithms.linearSearch(sorted_Array, 4));
+            assertEquals(4, SearchAlgorithms.linearSearch(sorted_Array, 4)); 
             assertEquals(3, SearchAlgorithms.linearSearch(unsorted_Array, 343));
-            assertEquals(-1, SearchAlgorithms.linearSearch(sorted_Array, 200));
+            assertEquals(-1, SearchAlgorithms.linearSearch(sorted_Array, 200)); //Element not found
       }
 
       @Test
@@ -25,7 +24,7 @@ public class SearchAlgorithmsTest {
             assertEquals(4, SearchAlgorithms.quadraticBinarySearch(sorted_Array, 4));
             assertEquals(2, SearchAlgorithms.quadraticBinarySearch(sorted_Array, 2));
             assertEquals(0, SearchAlgorithms.quadraticBinarySearch(sorted_Array_2, 11));
-            assertEquals(-1, SearchAlgorithms.quadraticBinarySearch(sorted_Array, 200));
+            assertEquals(-1, SearchAlgorithms.quadraticBinarySearch(sorted_Array, 200)); //Element not found
       }
 
       @Test
