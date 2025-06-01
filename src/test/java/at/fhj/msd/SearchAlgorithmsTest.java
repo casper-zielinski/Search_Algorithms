@@ -8,7 +8,10 @@ import org.junit.jupiter.api.Test;
 public class SearchAlgorithmsTest {
 
       int[] sorted_Array = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 100, 1000 };
+<<<<<<< HEAD
 
+=======
+>>>>>>> Interpolation_Search
       int[] unsorted_Array = { 133, 23, 656, 343, 23, 663, 1 };
 
       @Test
@@ -30,6 +33,7 @@ public class SearchAlgorithmsTest {
       }
 
       @Test
+<<<<<<< HEAD
       @DisplayName("Binary Search")
       void BinarySearch() {
 
@@ -47,6 +51,24 @@ public class SearchAlgorithmsTest {
 
             // check random
             assertEquals(3, SearchAlgorithms.binarySearch(sorted_Array, 3));
+=======
+      @DisplayName("Interpolations Search")
+      void InterpolationsSearch() {
+            int[] a = { 1, 2, 3, 4, 5, 10, 20, 50, 100, 1000 };
+
+            // direct
+            assertEquals(6, SearchAlgorithms.interpolationSearch(a, 20));
+
+            // Search left
+            assertEquals(3, SearchAlgorithms.interpolationSearch(a, 4));
+
+            // Search right
+            assertEquals(9, SearchAlgorithms.interpolationSearch(a, 1000));
+
+            // not found
+            assertEquals(-1, SearchAlgorithms.interpolationSearch(a, 7));
+
+>>>>>>> Interpolation_Search
       }
 
 }

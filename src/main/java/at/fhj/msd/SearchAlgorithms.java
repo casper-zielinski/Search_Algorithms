@@ -29,6 +29,7 @@ public class SearchAlgorithms {
       }
 
       public static int binarySearch(int a[], int x) {
+<<<<<<< HEAD
 
             int first = 0;
             int last = a.length - 1;
@@ -53,6 +54,34 @@ public class SearchAlgorithms {
 
       public static int interpolationSearch(int a[], int x) {
             return 0;
+=======
+            return 0;
+      }
+
+      public static int interpolationSearch(int a[], int x) {
+            int first = 0;
+            int last = a.length - 1;
+
+            while (x >= a[first] && x <= a[last] && first <= last) {
+
+                  int probe = first + (last - first) * (x - a[first]) / (a[last] - a[first]);
+
+                  if (a[probe] == x) {
+                        return probe;
+                  }
+
+                  else if (a[probe] < x) {
+                        first = probe + 1;
+                  }
+
+                  else {
+                        last = probe - 1;
+                  }
+
+            }
+
+            return -1;
+>>>>>>> Interpolation_Search
       }
 
       /**
