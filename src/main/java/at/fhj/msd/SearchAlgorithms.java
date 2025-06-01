@@ -28,14 +28,28 @@ public class SearchAlgorithms {
             return index;
       }
 
+      /**
+       * The Binary Search Algorithm implemented in Java.
+       * 
+       * This method searches for a target value `x` in a sorted array `a` by
+       * repeatedly dividing the search interval in half. It compares `x` with the
+       * middle element of the current interval and reduces the search space
+       * accordingly until the target is found or the interval is empty.
+       * 
+       * Overflow is avoided when calculating the middle index.
+       * 
+       * @param a the sorted array to search
+       * @param x the target value to find
+       * @return the index of `x` in array `a`, or -1 if not found
+       */
+
       public static int binarySearch(int a[], int x) {
-<<<<<<< HEAD
 
             int first = 0;
             int last = a.length - 1;
 
             while (first <= last) {
-                  int mid = first + (last - first) / 2; //overflow handling; 
+                  int mid = first + (last - first) / 2; // overflow handling;
                   int midNumber = a[mid];
 
                   if (x == midNumber) {
@@ -49,15 +63,25 @@ public class SearchAlgorithms {
             }
             return -1;
 
-
       }
 
-      public static int interpolationSearch(int a[], int x) {
-            return 0;
-=======
-            return 0;
-      }
-
+      /**
+       * The Interpolation Search Algorithm implemented in Java.
+       * 
+       * This method searches for a target value `x` in a sorted and uniformly
+       * distributed array `a`.
+       * Unlike binary search, it estimates the position of `x` based on the value of
+       * `x` relative
+       * to the range between `a[first]` and `a[last]`. This allows faster search for
+       * uniformly distributed data.
+       * 
+       * The search narrows down the interval based on this estimation until the
+       * element is found or the interval is empty.
+       * 
+       * @param a the sorted array with (ideally) uniformly distributed values
+       * @param x the target value to find
+       * @return the index of `x` in array `a`, or -1 if not found
+       */
       public static int interpolationSearch(int a[], int x) {
             int first = 0;
             int last = a.length - 1;
@@ -81,7 +105,6 @@ public class SearchAlgorithms {
             }
 
             return -1;
->>>>>>> Interpolation_Search
       }
 
       /**
