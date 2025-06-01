@@ -88,7 +88,16 @@ public class SearchAlgorithms {
 
             while (x >= a[first] && x <= a[last] && first <= last) {
 
+                  if (a[first] == a[last]) {
+                        if (a[first] == x) return first;
+                        else return -1;
+                  }
+
                   int probe = first + (last - first) * (x - a[first]) / (a[last] - a[first]);
+
+                  if (probe < first || probe > last) {
+                        return -1;
+                  }
 
                   if (a[probe] == x) {
                         return probe;

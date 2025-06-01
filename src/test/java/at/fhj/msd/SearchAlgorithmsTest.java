@@ -65,6 +65,15 @@ public class SearchAlgorithmsTest {
             // not found
             assertEquals(-1, SearchAlgorithms.interpolationSearch(a, 7));
 
+          
+            int[] sameValues = { 10, 10, 10, 10 };
+            assertEquals(0, SearchAlgorithms.interpolationSearch(sameValues, 10)); // vorhanden
+            assertEquals(-1, SearchAlgorithms.interpolationSearch(sameValues, 5)); // nicht vorhanden
+
+         
+            int[] sparse = { 1, 2, 3, 100000 };
+            assertEquals(-1, SearchAlgorithms.interpolationSearch(sparse, 999)); // Wert liegt zwar "dazwischen", ist
+                                                                                 // aber nicht im Array
       }
 
 }
