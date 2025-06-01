@@ -6,7 +6,6 @@ public class SearchAlgorithms {
       private static int t;
       private static int from;
       private static int to;
-      private static int Algorithm_Depth = 0;
 
       /**
        * Simple Linear Search Algorithm using a while loop
@@ -130,60 +129,70 @@ public class SearchAlgorithms {
       public static int quadraticBinarySearch(int a[], int x) {
             t = Calculate_t(a, 0, a.length - 1, x); // Calculating the First t Value
 
-            if (a[t] < x) {
-                  try {
-                        while (!(a[t] >= x)) {
-                              t += (int) Math.sqrt(a.length);
-                        }
-                  } catch (IndexOutOfBoundsException e) // if the t value is bigger then the last index of a, then t is
-                                                        // asigned the last index of a
-                  {
-                        t = a.length - 1;
-                  }
-
-                  from = t - (int) Math.sqrt(a.length);
-                  to = (int) t;
-
-                  while (from <= to) // Checking in the new Block where the x Value is
-                  {
-                        if (a[from] == x) {
-                              return from; // returning the index of the x Value
-                        }
-
-                        from++;
-                  }
-                  return -1; // if the x Value is not found, then it doesn't exist.
-
-            } else if (a[t] > x) // this is the exact same Process as before, but here the value at the t index
-                                 // is smaller than x
-            {
-                  try {
-                        while (!(a[t] <= x)) {
-                              t -= (int) Math.sqrt(a.length);
-                        }
-                  } catch (IndexOutOfBoundsException e) {
-                        t = 0;
-                  }
-
-                  from = t - (int) Math.sqrt(a.length);
-                  to = (int) t;
-
-                  try {
-
-                        while (from <= to) {
-                              if (a[from] == x) {
-                                    return from;
+            try {
+                  if (a[t] < x) {
+                              try {
+                                    while (!(a[t] >= x)) {
+                                          t += (int) Math.sqrt(a.length);
+                                    }
+                              } catch (IndexOutOfBoundsException e) // if the t value is bigger then the last index of a, then t is                                   // asigned the last index of a
+                              {
+                                    t = a.length - 1;
                               }
 
-                              from++;
+                              from = t - (int) Math.sqrt(a.length);
+                              to = (int) t;
+
+                              try {
+                                    while (from <= to) // Checking in the new Block where the x Value is
+                                    {
+                                    if (a[from] == x) {
+                                          return from; // returning the index of the x Value
+                                    }
+
+                                    from++;
+                                    }
+                              } catch (IndexOutOfBoundsException e)
+                              {
+                                    return -1;
+                              }
+                              
+                              return -1; // if the x Value is not found, then it doesn't exist.
+
+                        } else if (a[t] > x) // this is the exact same Process as before, but here the value at the t index
+                                          // is smaller than x
+                        {
+                              try {
+                                    while (!(a[t] <= x)) {
+                                          t -= (int) Math.sqrt(a.length);
+                                    }
+                              } catch (IndexOutOfBoundsException e) {
+                                    t = 0;
+                              }
+
+                              from = t - (int) Math.sqrt(a.length);
+                              to = (int) t;
+
+                              try {
+
+                                    while (from <= to) {
+                                          if (a[from] == x) {
+                                                return from;
+                                          }
+
+                                          from++;
+                                    }
+                                    return -1;
+
+                              } catch (IndexOutOfBoundsException e) {
+                                    return -1;
+                              }
+
                         }
-                        return -1;
-
-                  } catch (IndexOutOfBoundsException e) {
-                        return -1;
-                  }
-
+            } catch (Exception e) {
+                  return -1;
             }
+                  
 
             return t;
       }
