@@ -40,6 +40,6 @@ public class App {
         System.out.println(static_analysis.TimeMeasureQuadraticBinarySearch(5000, "Avarage Case", tenthousand));
         System.out.println(static_analysis.TimeMeasureQuadraticBinarySearch(50000, "Avarage Case", hundredthousand));
         System.out.println(static_analysis.TimeMeasureQuadraticBinarySearch(1000000, "Worst Case", hundredthousand));
-        
+
     }
 }
